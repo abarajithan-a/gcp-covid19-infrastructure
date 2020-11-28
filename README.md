@@ -1,7 +1,7 @@
 # gcp-covid19-infrastructure
-Repository for COVID19 cloud infrastructure &amp; components in Google Cloud Platform(GCP)
+Repository for COVID19 cloud infrastructure &amp; components in Google Cloud Platform(GCP)  
 
-This repository consists of Infrastructure-As-Code(IAC) for the Deployment Manager in Google Cloud Platform.
+This repository consists of Infrastructure-As-Code(IAC) for the Deployment Manager in Google Cloud Platform.  
 
 **Pre-requisites:**
 1. An account in Google Cloud Platform(GCP) should exist.
@@ -10,11 +10,11 @@ This repository consists of Infrastructure-As-Code(IAC) for the Deployment Manag
 4. Python version 3.7.x
 5. All the required Google Component APIs should be enabled from the console under *Google Cloud Platform -> APIs & Services*
 
-To deploy the cloud components infrastructure for the first time, run the following from command line
+To deploy the cloud components infrastructure for the first time, run the following from command line  
 `gcloud deployment-manager deployments create deploy-gcp-covid19-infrastructure --config prod-gcp-deploymentmanager.yaml`
 
-If you to want update the already existing deployment, run the following from command line
+If you to want update the already existing deployment, run the following from command line  
 `gcloud deployment-manager deployments update deploy-gcp-covid19-infrastructure --config prod-gcp-deploymentmanager.yaml`
 
-If you want to delete the deployment, run the following from command line
+If you want to delete the deployment, run the following from command line  
 `gcloud deployment-manager deployments delete deploy-gcp-covid19-infrastructure`
