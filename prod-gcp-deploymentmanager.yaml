@@ -1,0 +1,21 @@
+# Import all the pre-defined templates 
+imports:
+- path: gcp-pubsub-topic-template.py
+- path: gcp-storage-template.py
+
+# Build the resources using the respective templates
+resources:
+# This PubSub topic will be used to trigger a Cloud Function that pulls
+# daily CSV data from John Hopkins Github to the Cloud Storage Bucket
+- name: abar-ps-topic-covid19-filedate
+  type: gcp-pubsub-topic-template.py
+
+# This Cloud Storage Bucket will be used to save the downloaded
+# daily Covid19 CSV datafiles from John Hopkins Github repository
+- name: abar-gs-covid19-daily-dataset
+  type: gcp-storage-template.py
+  'properties': {
+      'location': 'us-east1',
+      'locationType': 'region',
+      'storageClass':'STANDARD'
+  }
