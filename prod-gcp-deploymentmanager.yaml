@@ -2,6 +2,7 @@
 imports:
 - path: gcp-pubsub-topic-template.py
 - path: gcp-storage-template.py
+- path: gcp-bigquery-tables-raw.py
 
 # Build the resources using the respective templates
 resources:
@@ -15,7 +16,27 @@ resources:
 - name: abar-gs-covid19-daily-dataset
   type: gcp-storage-template.py
   'properties': {
-      'location': 'us-east1',
-      'locationType': 'region',
-      'storageClass':'STANDARD'
+    'location': 'us-east1',
+    'locationType': 'region',
+    'storageClass':'STANDARD'
   }
+
+# This is the bigquery dataset to store all the daily ingested raw data for COVID19 project
+- name: abar-bq-dataset-covid19-raw
+  type: bigquery.v2.dataset
+  'properties': {
+    'description': "Dataset to store all the daily ingested raw data for COVID19 project",
+    'datasetReference': {
+      'datasetId': 'abar_bq_dataset_covid19_raw'
+    },
+    'location': 'us-east1'
+  }
+
+# This template builds all table schema definitions in the given bigquery dataset
+- name: abar-bq-tables-covid19-raw
+  type: gcp-bigquery-tables-raw.py
+  'properties': {
+    'datasetId': 'abar_bq_dataset_covid19_raw'
+  }  
+
+
