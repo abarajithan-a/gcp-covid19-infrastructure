@@ -25,7 +25,9 @@ def GenerateConfig(context):
             {'name': 'active_cases', 'type': 'STRING', 'mode': 'NULLABLE'},
             {'name': 'combined_key', 'type': 'STRING', 'mode': 'NULLABLE'},
             {'name': 'incident_rate', 'type': 'STRING', 'mode': 'NULLABLE'},
-            {'name': 'case_fatality_ratio', 'type': 'STRING', 'mode': 'NULLABLE'}                                                                                                                                  
+            {'name': 'case_fatality_ratio', 'type': 'STRING', 'mode': 'NULLABLE'},
+            {'name': 'ingestion_timestamp', 'type': 'TIMESTAMP', 'mode': 'REQUIRED'},
+            {'name': 'file_name', 'type': 'STRING', 'mode': 'REQUIRED'}                                                                                                                                                            
           ]
         },
         'timePartitioning': {
