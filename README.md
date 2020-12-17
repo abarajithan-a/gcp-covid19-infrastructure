@@ -3,7 +3,7 @@ Repository for COVID19 cloud infrastructure &amp; components in Google Cloud Pla
 
 This repository consists of Infrastructure-As-Code(IAC) for the Deployment Manager in Google Cloud Platform.
 
-**Deployment Workflow:**
+**Deployment Workflow:**  
 ![](images/covid19_gcp_deployment_architecture.jpg)  
 
 **Pre-requisites:**
