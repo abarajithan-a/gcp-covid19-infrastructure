@@ -37,6 +37,18 @@ resources:
   type: gcp-bigquery-tables-raw.py
   'properties': {
     'datasetId': 'abar_bq_dataset_covid19_raw'
+  }
+
+# This is the bigquery dataset to store all the datawarehouse and business intelligence
+# data models for COVID19 project
+- name: abar-bq-dataset-covid19-dw-bi
+  type: bigquery.v2.dataset
+  'properties': {
+    'description': "Dataset to store all EDW and BI data models for COVID19 project",
+    'datasetReference': {
+      'datasetId': 'abar_bq_dataset_covid19_dw_bi'
+    },
+    'location': 'us-east1'
   }  
 
 
