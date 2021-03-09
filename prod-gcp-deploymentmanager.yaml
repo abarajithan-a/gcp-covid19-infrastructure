@@ -49,6 +49,18 @@ resources:
       'datasetId': 'abar_bq_dataset_covid19_dw_bi'
     },
     'location': 'us-east1'
+  }
+
+# This is the bigquery dataset to store all ETL management related metadata
+# like jobs run table, bad data table
+- name: abar_bq_dataset_covid19_etl_manager
+  type: bigquery.v2.dataset
+  'properties': {
+    'description': "dataset to store all ETL related metadata",
+    'datasetReference': {
+      'datasetId': 'abar_bq_dataset_covid19_etl_manager'
+    },
+    'location': 'us-east1'
   }  
 
 
